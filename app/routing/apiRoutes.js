@@ -38,7 +38,7 @@ module.exports = function(app) {
     var totalDifference = 0;
 
     //loop through the friends data array of objects to get each friends scores
-    for(var i = 0; i < [friends].length; i++){
+    for(var i = 0; i < friends.length; i++){
       console.log(friends[i].name);
       totalDifference = 0;
 
@@ -48,7 +48,7 @@ module.exports = function(app) {
         // We calculate the difference between the scores and sum them into the totalDifference
         totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
         // If the sum of differences is less then the differences of the current "best match"
-        if (totalDifference <= greatMatch.totalDifference){
+        if (totalDifference <= greatMatch.matchDifference){
           // Reset the bestMatch to be the new friend. 
           greatMatch.name = friends[i].name;
           greatMatch.photo = friends[i].photo;
